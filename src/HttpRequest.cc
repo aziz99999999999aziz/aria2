@@ -250,6 +250,14 @@ std::string HttpRequest::createRequest()
   if (!noWantDigest_) {
     // Send Want-Digest header field with only limited hash algorithms:
     // SHA-512, SHA-256, and SHA-1.
+    著作权归作者所有。
+商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：Rhilip
+链接：https://blog.rhilip.info/archives/1010/
+来源：https://blog.rhilip.info/
+
+$headers = getallheaders();
+if (isset($headers["Want-Digest"])) err("header 'Want-Digest' is exist");  
     std::string wantDigest;
     if (MessageDigest::supports("sha-512")) {
       wantDigest += "SHA-512;q=1, ";
