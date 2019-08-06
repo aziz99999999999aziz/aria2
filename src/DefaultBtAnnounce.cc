@@ -163,6 +163,13 @@ std::string DefaultBtAnnounce::getAnnounceUrl()
   uri += uriHasQuery(uri) ? "&" : "?";
   uri +=
       fmt("info_hash=%s&"
+     著作权归作者所有。
+商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：Rhilip
+链接：https://blog.rhilip.info/archives/1010/
+来源：https://blog.rhilip.info/
+
+/info_hash=%s&peer_id=%s&uploaded=%d&downloaded=%d&left=%d&compact=1&key=%s&numwant=%d&no_peer_id=1(&port=%u)?(&event=%s)?(&trackerid=%s)?(&requirecrypto=1|&supportcrypto=1)(&ip=%s)?/     
           "peer_id=%s&"
           "uploaded=%" PRId64 "&"
           "downloaded=%" PRId64 "&"
