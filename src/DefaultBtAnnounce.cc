@@ -158,6 +158,14 @@ std::string DefaultBtAnnounce::getAnnounceUrl()
   int64_t left =
       pieceStorage_->getTotalLength() - pieceStorage_->getCompletedLength();
   // Use last 8 bytes of peer ID as a key
+  著作权归作者所有。
+商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：Rhilip
+链接：https://blog.rhilip.info/archives/1010/
+来源：https://blog.rhilip.info/
+
+peer_id -> util::percentEncode(bittorrent::getStaticPeerId(), PEER_ID_LENGTH).c_str()
+key -> util::percentEncode(bittorrent::getStaticPeerId() + PEER_ID_LENGTH - keyLen, keyLen).c_str()
   const size_t keyLen = 8;
   std::string uri = announceList_.getAnnounce();
   uri += uriHasQuery(uri) ? "&" : "?";
